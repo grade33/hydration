@@ -1,0 +1,26 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+@use '../utils/functions' as fn;
+
+.sidebar-info {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 35px;
+  padding: 58px 40px 30px 28px;
+  border-left: 1px solid #efecec;
+
+  &__calendar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    color: #3629b7;
+    @include mix.p18;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

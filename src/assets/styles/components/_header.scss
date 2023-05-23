@@ -1,0 +1,110 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/functions' as fn;
+
+.header {
+  @include mix.p16;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include mix.p24;
+
+    color: #3629b7;
+
+    &_bold {
+      font-weight: 600;
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    max-width: 300px;
+    margin-left: auto;
+    border: 1px solid #e7e7e7;
+    border-radius: 15px;
+  }
+
+  &__submit {
+    flex: none;
+    padding-right: 20px;
+    padding-left: 24px;
+
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+
+  &__search {
+    width: 100%;
+    padding: 17px 24px 17px 0;
+
+    &::placeholder {
+      color: #494949;
+    }
+  }
+
+  &__weather {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background: #f7f9fd;
+    border-radius: 12px;
+
+    &-text {
+      color: #11263c;
+
+      &_bold {
+        font-weight: 600;
+      }
+    }
+
+    &-desc {
+      flex-shrink: 2;
+      color: #8e8f8f;
+    }
+  }
+
+  &__degree {
+    display: flex;
+    flex: none;
+    gap: 16px;
+    align-items: center;
+    font-weight: 600;
+
+    &-text {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      &_qount {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          width: 4px;
+          height: 4px;
+          border: 1px solid #000;
+          border-radius: 50%;
+          content: '';
+        }
+      }
+    }
+  }
+}

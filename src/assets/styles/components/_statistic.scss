@@ -1,0 +1,219 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+@use '../utils/functions' as fn;
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__list {
+    display: flex;
+    gap: 24px;
+
+    &-item {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      padding: 16px 20px;
+      border-radius: 12px;
+
+      &_green {
+        color: #55a55e;
+        background: #edffef;
+
+        .statistic__circle-common {
+          color: #edffef;
+        }
+      }
+
+      &_purple {
+        color: #5e5498;
+        background: #f4f2ff;
+
+        .statistic__circle-common {
+          color: #f4f2ff;
+        }
+      }
+
+      &_brown {
+        color: #9b715d;
+        background: #fff2ec;
+
+        .statistic__circle-common {
+          color: #fff2ec;
+        }
+      }
+    }
+
+    &-info {
+      position: relative;
+      width: fit-content;
+    }
+
+    &-percente {
+      @include mix.p12;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #11263c;
+      transform: translate(-50%, -50%);
+    }
+
+    &-circle {
+      width: 48px;
+      height: 48px;
+      transition: stroke-dasharray 0.5s ease-in-out;
+
+      &-common {
+        stroke: #d2d3d4;
+        stroke-width: 10;
+        stroke-linecap: round;
+      }
+
+      &-progress {
+        stroke: currentcolor;
+        stroke-width: 10;
+        stroke-linecap: round;
+      }
+    }
+
+    &-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-title {
+      @include mix.p16;
+    }
+
+    &-value {
+      @include mix.p18;
+
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-name {
+      color: #494949;
+      @include mix.p12;
+    }
+
+    &-value {
+      @include mix.p32;
+
+      color: #3629b7;
+    }
+  }
+
+  &__info {
+    @include mix.p14;
+
+    display: flex;
+    gap: 12px;
+
+    &-item {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      &_blue {
+        &::before {
+          background: #3629b7;
+          content: '';
+        }
+      }
+
+      &_pink {
+        &::before {
+          background: #fbb8ff;
+          content: '';
+        }
+      }
+
+      &_purple {
+        &::before {
+          background: #ff4267;
+          content: '';
+        }
+      }
+
+      &::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__chart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-bar {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-line {
+      position: absolute;
+      z-index: -1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 10px 0;
+      inset: 0;
+
+      &-item {
+        width: 100%;
+        border-bottom: 1px solid #ebecf1;
+
+        &_dashed {
+          border-bottom: 1px dashed #ebecf1;
+        }
+      }
+    }
+
+    &-img {
+      &-block {
+        width: 100%;
+        padding: 0 25px;
+      }
+
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      color: #8e8f8f;
+      @include mix.p12;
+    }
+  }
+}

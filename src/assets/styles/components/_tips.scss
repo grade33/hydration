@@ -1,0 +1,106 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+@use '../utils/functions' as fn;
+
+.tips {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 31px;
+  background: #fff;
+  border: 1px solid #f2eeee;
+  border-radius: 20px;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 2%),
+    0 12.16px 8.576px rgba(0, 0, 0, 1.32%),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.83%);
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    @include mix.p20;
+
+    color: #494949;
+  }
+
+  &__desc {
+    @include mix.p13;
+
+    color: #8e8f8f;
+  }
+
+  &__select {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #7b81a6;
+    white-space: nowrap;
+    @include mix.p18;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px;
+    border-radius: 16px;
+
+    &_watermelon {
+      background: #edffef;
+    }
+
+    &_oranges {
+      background: #fff2ec;
+    }
+
+    &_grapes {
+      background: #f4f2ff;
+    }
+  }
+
+  &__icon {
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      background: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    @include mix.p16;
+
+    color: #494949;
+  }
+
+  &__text {
+    @include mix.p13;
+
+    color: #7b81a6;
+  }
+}

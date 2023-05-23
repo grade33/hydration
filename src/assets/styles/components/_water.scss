@@ -1,0 +1,26 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+@use '../utils/functions' as fn;
+
+.water {
+  position: relative;
+  margin-top: 98px;
+  color: #fff;
+  background: #1573ff;
+  border-radius: 25px;
+
+  &__content {
+    position: absolute;
+    right: 16px;
+    bottom: 20px;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__name {
+    align-self: flex-end;
+    max-width: 93px;
+    margin-bottom: 20px;
+    @include mix.p20;
+  }
+}
